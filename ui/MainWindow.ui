@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>810</width>
+    <height>777</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,27 +17,52 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>82</y>
-      <width>731</width>
-      <height>31</height>
+      <x>20</x>
+      <y>70</y>
+      <width>771</width>
+      <height>51</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
        <property name="text">
         <string>Model filename:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit_filename"/>
+      <widget class="QTextEdit" name="textEdit_filename">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_load">
+      <widget class="QPushButton" name="pushButton_browse">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>Browse</string>
        </property>
       </widget>
      </item>
@@ -47,8 +72,8 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>460</y>
-      <width>751</width>
+      <y>640</y>
+      <width>771</width>
       <height>80</height>
      </rect>
     </property>
@@ -67,26 +92,22 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_FacialPoint">
-       <property name="text">
-        <string>Predict Facial Point</string>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>20</y>
+      <x>210</x>
+      <y>10</y>
       <width>481</width>
-      <height>41</height>
+      <height>40</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>40</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -97,23 +118,79 @@
      <string>W207 - Project4: Facial KeyPoint Detection</string>
     </property>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>20</x>
       <y>130</y>
-      <width>441</width>
-      <height>291</height>
+      <width>771</width>
+      <height>431</height>
      </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>50</y>
+      <width>351</width>
+      <height>10</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>By Dr. Tensorflow: Julia Ying, Haerang Lee, Sang Lee</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>570</y>
+      <width>771</width>
+      <height>67</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Fashion Items</string>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QLabel" name="canvas">
+      <widget class="QCheckBox" name="checkBox_glasses">
        <property name="text">
-        <string>Image not shown yet</string>
+        <string>Glasses</string>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_cigarette">
+       <property name="text">
+        <string>Cigarette</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_n95mask">
+       <property name="text">
+        <string>N95 Mask</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_fps">
+       <property name="text">
+        <string>Facial Points</string>
        </property>
       </widget>
      </item>
@@ -125,8 +202,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>810</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
