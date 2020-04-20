@@ -11,8 +11,8 @@ import numpy as np
 import cv2
 from collections import namedtuple
 
-DEFAULT_MODEL_FILE = r"model/VGG16_DataAug.h5"
-OPENCV_FACE_DETECTION_XML = r"model/haarcascade_frontalface_alt.xml"
+DEFAULT_MODEL_FILE = r"res/model/VGG16_DataAug.h5"
+OPENCV_FACE_DETECTION_XML = r"res/model/haarcascade_frontalface_alt.xml"
 TARGET_IMAGE_WIDTH = 96
 TARGET_IMAGE_HEIGHT = 96
 logger = logging.getLogger(__name__)
