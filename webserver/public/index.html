@@ -1,0 +1,51 @@
+<!-- Facial point detection app written using Opencv.js & tensorflow.js -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Facial point detection app">
+    <meta name="keywords" content="OpenCV.js, Tensorflow.js">
+    <meta name="author" content="Sang Lee">
+    
+    <title> Facial PointDetection using VGG16</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen"/>
+        
+    <!-- load bootstrap -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+    <!-- load font -->
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container h-100">
+    <div class = "row"><img class="img-fluid mx-auto" src="img/header.png" alt="Logo"></div>
+	<div class = "row h-100 justify-content-center align-items-center" id = "header">
+		<h5>Facial point detection using machine learning</h5>
+	</div>
+        <div style="text-align:center">
+        <video id="video" width="500" height="500" style="display:none"></video>
+        <canvas id="canvas_output" style="border:1px solid #000000;"> </canvas> 
+        </div>
+        </br>
+    <div class="modal"></div>
+     <div style="text-align:center">
+         <button type="button" id="button_capture">Start</button><br/>
+    </div>
+    <div style="text-align:center">
+        <fieldset>
+    
+        <input type="checkbox" id="fashion_glasses"> <label for="fashion_glasses">Safety glasses</label>
+        <input type="checkbox" id="fashion_n95mask">
+        <label for="fashion_glasses">N95 Mask</label>        
+    </fieldset>    
+    </div>
+    </body>
+
+    <script src="src/control.js"></script>
+    <script async src="src/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+
+</html>
