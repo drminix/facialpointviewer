@@ -9,42 +9,110 @@
     <meta name="author" content="Sang Lee">
     
     <title> Facial PointDetection using VGG16</title>
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen"/>
+    
+   <!-- tensorflow.js -->
+   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+   
+   <!-- GUI) Materilize CSS related -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
-    <!-- load bootstrap -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        
-    <!-- load font -->
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
-        
+         
+   <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen"/>
+         
     </head>
     <body>
-        <div class="container h-100">
-    <div class = "row"><img class="img-fluid mx-auto" src="img/header.png" alt="Logo"></div>
-	<div class = "row h-100 justify-content-center align-items-center" id = "header">
-		<h5>Facial point detection using machine learning</h5>
-	</div>
-        <div style="text-align:center">
-        <video id="video" width="500" height="500" style="display:none"></video>
-        <canvas id="canvas_output" style="border:1px solid #000000;"> </canvas> 
+        
+    <!--   Header   -->
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <h5 class="header center blue-text small">Facial point detection using machine learning(tensorflow.js)</h5>
+        <div class="row center">
+          <h6 class="header col s12 light">Model: VGG-16 transfer learning + data augmentation</h6>
         </div>
-        </br>
-    <div class="modal"></div>
-     <div style="text-align:center">
-         <button type="button" id="button_capture">Start</button><br/>
+      </div>
     </div>
-    <div style="text-align:center">
-        <fieldset>
-    
-        <input type="checkbox" id="fashion_glasses"> <label for="fashion_glasses">Safety glasses</label>
-        <input type="checkbox" id="fashion_n95mask">
-        <label for="fashion_glasses">N95 Mask</label>        
-    </fieldset>    
+        
+      <!--   Start buttons   -->
+    <div class="section no-pad-bot light-blue lighten-4">
+    <div class="container">
+    <div class="row center">
+      <button id="button_capture" class="waves-effect waves-light light-blue btn-small">Start Button</button>
+      <br/><br/>
     </div>
-    </body>
+    </div>
+    </div>      
 
+    <!-- canvas output -->    
+    <div class="section no-pad-bot lighten-4">
+    <div class="container">
+    <div class="row center">
+        <video id="video" width="400" height="400" style="display:none"></video>
+        <canvas id="canvas_output" style="border:1px solid #000000;"> </canvas> 
+    </div>
+    </div>
+    </div>   
+
+    
+    <!-- control panel -->
+    <div class="container">
+    <div class="section">
+ 
+    <div class="row">
+        
+      <!--   Control   -->
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h3 class="center light-blue-text"><i class="material-icons" style="font-size: 2em">build</i></h3>
+          <h5 class="center">Control panel</h5>
+ 
+          <p class="light"></p>
+ 
+          <div>
+            <p><label>Status:</label></p>
+            <pre class="grey lighten-4" style="overflow-x: auto"><em id="model-status">Loading data...</em></pre>
+ 
+        
+           <div class="center">
+            <button autocomplete="off" id="load-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="load()">Load Model</button>
+            <button autocomplete="off" id="save-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="save()">Save Model</button>
+          </div>
+              
+          </div>
+          <br/>
+ 
+
+ 
+        </div>
+      </div>
+ 
+      <!--   Fashion items   -->
+      <div class="col s12 m6">
+        <div class="icon-block">
+          <h3 class="center light-blue-text"><i class="material-icons" style="font-size: 2em">face</i></h3>
+          <h5 class="center">Fashion items</h5>
+ 
+            <p>
+            <label>
+            <input  type="checkbox" />
+            <span> Safety Glasses </span>
+            </label>
+            </p>
+
+            <p>
+            <label>
+            <input type="checkbox" />
+            <span>N95 Mask</span>
+            </label>
+            </p>
+            
+        </div>
+        </div>
+    </div> <!-- the end of fashion item -->
+ 
+  </div>
+</div>
+        
     <script src="src/control.js"></script>
     <script async src="src/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
 

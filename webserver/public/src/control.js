@@ -1,7 +1,7 @@
 const video = document.getElementById('video');
 const actionBtn = document.getElementById('button_capture');
-const width = 500;
-const height = 500;
+const width = 400;
+const height = 400;
 const FPS = 30;
 let stream;
 let streaming = false;
@@ -67,4 +67,3 @@ function onReady() {
         setTimeout(processVideo, delay);
     }
 }
-
